@@ -10,7 +10,7 @@
 2, Install YouCompleteMe
     --- install it by Vundle
         add Bundle "Valloric/YouCompleteMe" to .vimrc (see vimrc near line 18)
-        open vim, run :BundleInstall()
+        open vim, run :BundleInstall
     
     --- now ~/.vim/bundle/YouCompleteMe exists, run installation script
         $ cd ~/.vim/bundle/YouCompleteMe
