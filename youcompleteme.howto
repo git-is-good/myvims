@@ -1,0 +1,25 @@
+- - - How to install
+
+0, Update vim
+    brew upgrade vim
+
+1, Install Vundle
+    --- clone its repo to ./vim/bundle directly, installation done
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+2, Install YouCompleteMe
+    --- install it by Vundle
+        add Bundle "Valloric/YouCompleteMe" to .vimrc (see vimrc near line 18)
+        open vim, run :BundleInstall()
+    
+    --- now ~/.vim/bundle/YouCompleteMe exists, run installation script
+        $ cd ~/.vim/bundle/YouCompleteMe
+        $ ./install.sh --clang-completer --go-completer 
+
+4, Add YouCompleteMe configs in .vimrc
+    --- see vimrc near line 25
+
+3, Write project-specific file .ycm_extra_conf.py
+    --- see ycm_extra_conf.py (or ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py) for example
+        put this file in the project dir
+
