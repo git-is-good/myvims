@@ -54,6 +54,8 @@ let g:ycm_complete_in_strings = 1
 "注释和字符串中的文字也会被收入补全
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
 
+let g:ycm_warning_symbol = '*>'
+let g:ycm_error_symbol = '->'
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR> 
 "added for YouCompleteMe done
 
@@ -161,10 +163,14 @@ let g:pydiction_menu_height = 20
 source $HOME/.vim/myutil.vim
 
 "personal config file .vimrc at $PWD
-if $PWD != $HOME && filereadable($PWD.'/.vimrc')
-    source $PWD/.vimrc
-endif
+"if $PWD != $HOME && filereadable($PWD.'/.vimrc')
+"    source $PWD/.vimrc
+"endif
 
 map , r<Enter>
+
+map < :YcmCompleter GoTo <Enter>
+
+map > :normal! i<tab><Enter>l
 
 map m :0r ! fnm=$(echo _%_ \| tr '[:lower:]./' '[:upper:]__') && echo "\#ifndef $fnm" && echo "\#define $fnm" && echo "" && echo "" && echo "\#endif /* $fnm */" <Enter>
